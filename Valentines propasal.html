@@ -82,5 +82,19 @@
 
     <script>
         function openEnvelope() {
-            documen
+            document.getElementById('envelope').classList.add('open');
+            document.getElementById('letter').style.display = 'block';
+        }
 
+        function sayYes() {
+            document.getElementById('message').innerText = 'I love you so much! Mwah mwah <3 Happy Valentine\'s Day!';
+        }
+
+        function sayNo() {
+            var valentinePrompt = document.getElementById('valentinePrompt');
+            valentinePrompt.innerHTML = 'Please reconsider :(';
+            document.getElementById('message').innerText = '';
+        }
+    </script>
+</body>
+</html>
