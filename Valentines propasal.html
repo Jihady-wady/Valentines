@@ -10,91 +10,65 @@
             background-color: #f7f7f7;
             text-align: center;
             margin: 50px;
-            overflow: hidden; /* Prevent hearts from overflowing the body */
-        }
-
-        #envelope {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-            transition: transform 0.5s;
-        }
-
-        #envelope img {
-            width: 200px;
-        }
-
-        #envelope.open {
-            transform: rotate(0deg) translateY(-100%);
-        }
-
-        #letter {
-            display: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 200px;
-            padding: 20px;
-            background-color: #fff;
-            border: 2px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         #valentinePrompt {
-            margin-top: 10px;
+            margin-top: 20px;
             font-weight: bold;
             color: #ff5e5e;
         }
 
-        #buttons {
-            margin-top: 20px;
-        }
-
-        #message {
+        #yesButton, #noButton {
             margin-top: 20px;
             font-weight: bold;
-            color: #ff5e5e;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #yesButton {
+            background-color: #5ef55e;
+        }
+
+        #noButton {
+            background-color: #ff5e5e;
         }
     </style>
 </head>
 <body>
 
-    <div id="envelope" onclick="openEnvelope()">
-        <!-- Replace the src attribute with your actual cute envelope image URL -->
-        <img src="https://i.pinimg.com/564x/72/75/c2/7275c2189dfb02ae0293dff3853f77be.jpg" alt="Cute Envelope">
-        <div id="letter">
-            <p id="valentinePrompt">Will you be my Valentine?</p>
-            <div id="buttons">
-                <button onclick="sayYes()">Yes</button>
-                <button onclick="sayNo()">No</button>
-            </div>
-            <p id="message"></p>
-        </div>
+    <div>
+        <p id="valentinePrompt">Will you be my Valentine?</p>
+        <button id="yesButton" onclick="sayYes()">Yes</button>
+        <button id="noButton" onclick="sayNo()">No</button>
     </div>
 
     <script>
-        function openEnvelope() {
-            document.getElementById('envelope').classList.add('open');
-            document.getElementById('letter').style.display = 'block';
-        }
+        var noButtonClicks = 0;
 
         function sayYes() {
-            document.getElementById('message').innerText = 'I love you so much! Mwah mwah <3 Happy Valentine\'s Day!';
+            document.getElementById('valentinePrompt').innerText = 'I love you so much! Mwah mwah <3';
+            document.getElementById('yesButton').style.display = 'none';
+            document.getElementById('noButton').style.display = 'none';
         }
 
         function sayNo() {
-            var valentinePrompt = document.getElementById('valentinePrompt');
-            valentinePrompt.innerHTML = 'Please reconsider :(';
-            document.getElementById('message').innerText = '';
+            noButtonClicks++;
+
+            if (noButtonClicks === 1) {
+                document.getElementById('valentinePrompt').innerText = 'Are you sure? Please reconsider.';
+            } else if (noButtonClicks === 2) {
+                document.getElementById('valentinePrompt').innerText = 'Really? Last chance to reconsider!';
+            } else if (noButtonClicks === 3) {
+                document.getElementById('valentinePrompt').innerText = 'Okay, maybe next time. Happy Valentine\'s Day!';
+                document.getElementById('yesButton').style.display = 'none';
+                document.getElementById('noButton').style.display = 'none';
+            }
+
+            // Increase the size of the "Yes" button after each "No" click
+            document.getElementById('yesButton').style.fontSize = (16 + noButtonClicks * 2) + 'px';
         }
     </script>
+
 </body>
 </html>
