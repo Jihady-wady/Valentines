@@ -17,6 +17,7 @@
             position: relative;
             display: inline-block;
             cursor: pointer;
+            display: none; /* Hide envelope initially */
         }
 
         #letter {
@@ -71,7 +72,7 @@
 
     <div id="envelope" onclick="openEnvelope()">
         <!-- Replace the src attribute with your actual cute envelope image URL -->
-        <img src="https://via.placeholder.com/150" alt="Cute Envelope" width="150">
+        <img src="https://i.pinimg.com/564x/72/75/c2/7275c2189dfb02ae0293dff3853f77be.jpg" alt="Cute Envelope" width="500">
         <div id="letter">
             <p>Will you be my Valentine?</p>
             <button onclick="sayYes()">Yes</button>
@@ -82,13 +83,17 @@
 
     <!-- Heart symbols floating around -->
     <div class="heart-container">
-        <span class="heart">❤️</span>
-        <span class="heart">❤️</span>
-        <span class="heart">❤️</span>
+        <!-- Increase the number of hearts as needed -->
+        <span class="heart" style="top: 20%; left: 30%;">❤️</span>
+        <span class="heart" style="top: 50%; left: 70%;">❤️</span>
+        <span class="heart" style="top: 80%; left: 40%;">❤️</span>
+        <span class="heart" style="top: 60%; left: 10%;">❤️</span>
+        <span class="heart" style="top: 30%; left: 80%;">❤️</span>
     </div>
 
     <script>
         function openEnvelope() {
+            document.getElementById('envelope').style.display = 'none'; // Hide the envelope
             document.getElementById('letter').style.display = 'block';
         }
 
@@ -103,4 +108,3 @@
 
 </body>
 </html>
-
