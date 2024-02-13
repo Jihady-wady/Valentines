@@ -37,12 +37,20 @@
             font-weight: bold;
             color: #ff5e5e;
         }
+
+        .heart {
+            color: #ff5e5e;
+            font-size: 20px;
+            display: inline-block;
+            margin: 0 5px;
+        }
     </style>
 </head>
 <body>
 
     <div id="envelope" onclick="openEnvelope()">
-        <img src="envelope.png" alt="Envelope" width="150">
+        <!-- Replace the src attribute with your cute envelope image -->
+        <img src="https://example.com/path/to/cute-envelope.png" alt="Cute Envelope" width="150">
         <div id="letter">
             <p>Will you be my Valentine?</p>
             <button onclick="sayYes()">Yes</button>
@@ -51,17 +59,24 @@
         </div>
     </div>
 
+    <!-- Heart symbols to add a cute touch -->
+    <div>
+        <span class="heart">❤️</span>
+        <span class="heart">❤️</span>
+        <span class="heart">❤️</span>
+    </div>
+
     <script>
         function openEnvelope() {
             document.getElementById('letter').style.display = 'block';
         }
 
         function sayYes() {
-            document.getElementById('message').innerText = 'Yay! I knew you'd say yes! 😄 Happy Valentine\'s Day!';
+            document.getElementById('message').innerText = 'Really??? MwAH MWAH I love you <3';
         }
 
         function sayNo() {
-            document.getElementById('message').innerText = 'Oh no! 😢 Are you sure? Give it another thought!';
+            document.getElementById('message').innerText = 'Please say yess :(';
         }
     </script>
 
