@@ -40,9 +40,13 @@
         }
 
         #valentinePrompt {
-            margin-top: 20px;
+            margin-top: 10px; /* Adjusted margin-top */
             font-weight: bold;
             color: #ff5e5e;
+        }
+
+        #buttons {
+            margin-top: 20px; /* Added margin-top */
         }
 
         #message {
@@ -80,8 +84,10 @@
         <img src="https://i.pinimg.com/564x/72/75/c2/7275c2189dfb02ae0293dff3853f77be.jpg" alt="Cute Envelope" width="200">
         <div id="letter">
             <p id="valentinePrompt">Will you be my Valentine?</p>
-            <button onclick="sayYes()">Yes</button>
-            <button onclick="sayNo()">No</button>
+            <div id="buttons">
+                <button onclick="sayYes()">Yes</button>
+                <button onclick="sayNo()">No</button>
+            </div>
             <p id="message"></p>
         </div>
     </div>
@@ -117,3 +123,4 @@
 
 </body>
 </html>
+
