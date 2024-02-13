@@ -1,41 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Day Proposal</title>
-</head>
-<body>
+<html>
+    <body>
+        <div>
+            <h1>Will you be my valentine?</h1>
+            <button id="yesButton">Yes</button>
+            <button id="no">No</button>    
+        </div>
 
-    <h1>Valentine's Day Proposal</h1>
-
-    <script>
-        function askToBeValentine() {
-            var response = prompt("Hello there, my special someone!\nAs the day of love approaches, I have a question for you.\nWill you be my Valentine? (yes/no)");
-
-            if (response !== null) {
-                response = response.toLowerCase();
-
-                if (response === 'yes') {
-                    alert("REALLY mwah mwah mwah :D");
-                } else if (response === 'no') {
-                    alert("Are you sure?"); {
-                } else if (response === 'no') {
-                    alert("Reconsider please :(");
-                } else if (response === 'no') {
-                    alert("come on say yes");{
-                } else if (response === 'no') {
-                    alert("Okay 😞."); 
-                } else {
-                    alert("Apologies I didn't quite understand. Please enter 'yes' or 'no'.");
-                } 
+        <style>
+            div {
+                text-align: center;
+                vertical-align: middle;
             }
-        }
+            #no {
+                position: absolute;
+            }  
+        </style>
+        <script>
+            document.getElementById("yesButton").addEventListener("click", function() {
+                alert("Omg mwah mwah mwaahh <3");
+            }); 
 
-        // Call the function to execute the code
-        askToBeValentine();
-    </script>
-
-</body>
+            var b = document.getElementById("no");
+            b.addEventListener("click", change);
+            
+            function change() {
+                var i = Math.floor(Math.random() * 1000);
+                var j = Math.floor(Math.random() * 700);
+                b.style.left = i + "px";
+                b.style.top = j + "px";
+            }    
+        </script>
+    </body>
 </html>
