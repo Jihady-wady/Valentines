@@ -73,7 +73,7 @@
         <!-- Replace the src attribute with your actual cute envelope image URL -->
         <img src="https://i.pinimg.com/564x/72/75/c2/7275c2189dfb02ae0293dff3853f77be.jpg" alt="Cute Envelope" width="200">
         <div id="letter">
-            <p>Will you be my Valentine?</p>
+            <p id="valentinePrompt">Will you be my Valentine?</p>
             <button onclick="sayYes()">Yes</button>
             <button onclick="sayNo()">No</button>
             <p id="message"></p>
@@ -92,6 +92,8 @@
 
     <script>
         function openEnvelope() {
+            var valentinePrompt = document.getElementById('valentinePrompt');
+            valentinePrompt.innerHTML = 'Will you be my Valentine?';
             document.getElementById('envelope').style.display = 'none'; // Hide the envelope
             document.getElementById('letter').style.display = 'block';
         }
@@ -101,10 +103,13 @@
         }
 
         function sayNo() {
-            document.getElementById('message').innerText = 'Please reconsider :(';
+            var valentinePrompt = document.getElementById('valentinePrompt');
+            valentinePrompt.innerHTML = 'Please reconsider :(';
+            document.getElementById('message').innerText = '';
         }
     </script>
 
 </body>
 </html>
+
 
