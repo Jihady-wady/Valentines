@@ -56,17 +56,22 @@
             noButtonClicks++;
 
             if (noButtonClicks === 1) {
-                document.getElementById('valentinePrompt').innerText = 'Are you sure? Please reconsider.';
+                document.getElementById('valentinePrompt').innerText = 'Are you sure??';
             } else if (noButtonClicks === 2) {
                 document.getElementById('valentinePrompt').innerText = 'Really? Last chance to reconsider!';
             } else if (noButtonClicks === 3) {
                 document.getElementById('valentinePrompt').innerText = 'Okay, maybe next time. Happy Valentine\'s Day!';
-                document.getElementById('yesButton').style.display = 'none';
+                document.getElementById('yesButton').style.display = 'inline-block';
                 document.getElementById('noButton').style.display = 'none';
             }
 
             // Increase the size of the "Yes" button after each "No" click
             document.getElementById('yesButton').style.fontSize = (16 + noButtonClicks * 2) + 'px';
+
+            // Disable the "No" button after it's clicked two times
+            if (noButtonClicks >= 2) {
+                document.getElementById('noButton').disabled = true;
+            }
         }
     </script>
 
