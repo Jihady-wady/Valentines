@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Proposal</title>
+</head>
+<body>
+
+    <h1>Valentine's Day Proposal</h1>
+
+    <script>
+        function askToBeValentine() {
+            var response = prompt("Hello there, my special someone!\nAs the day of love approaches, I have a question for you.\nWill you be my Valentine? (yes/no)");
+
+            if (response !== null) {
+                response = response.toLowerCase();
+
+                if (response === 'yes') {
+                    alert("That's fantastic! I'm thrilled to have you as my Valentine!");
+                } else if (response === 'no') {
+                    alert("Oh, no worries! If you change your mind, let me know. Wishing you a wonderful day!");
+                } else {
+                    alert("I'm sorry, I didn't understand. Please enter 'yes' or 'no'.");
+                }
+            }
+        }
+
+        // Call the function to execute the code
+        askToBeValentine();
+    </script>
+
+</body>
+</html>
