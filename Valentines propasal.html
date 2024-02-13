@@ -55,25 +55,17 @@
         function sayNo() {
             noButtonClicks++;
 
-            if (noButtonClicks === 1) {
-                document.getElementById('valentinePrompt').innerText = 'Are you sure??';
-            } else if (noButtonClicks === 2) {
-                document.getElementById('valentinePrompt').innerText = 'Really? Last chance to reconsider!';
+            if (noButtonClicks <= 2) {
+                // Increase the size of the "Yes" button after each "No" click
+                document.getElementById('yesButton').style.fontSize = (16 + noButtonClicks * 2) + 'px';
             } else {
-                document.getElementById('valentinePrompt').innerText = 'Okay, maybe next time. Happy Valentine\'s Day!';
+                document.getElementById('yesButton').style.fontSize = '20px'; // Reset the font size
                 document.getElementById('yesButton').style.display = 'inline-block';
                 document.getElementById('noButton').style.display = 'none';
-            }
-
-            // Increase the size of the "Yes" button after each "No" click
-            document.getElementById('yesButton').style.fontSize = (16 + noButtonClicks * 2) + 'px';
-
-            // Disable the "No" button after the 2nd click
-            if (noButtonClicks >= 2) {
-                document.getElementById('noButton').disabled = true;
             }
         }
     </script>
 
 </body>
 </html>
+
