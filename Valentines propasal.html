@@ -1,34 +1,69 @@
-<html>
-    <body>
-        <div>
-            <h1>Will you be my valentine?</h1>
-            <button id="yesButton">Yes</button>
-            <button id="no">No</button>    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Proposal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #envelope {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        #letter {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #ff5e5e;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="envelope" onclick="openEnvelope()">
+        <img src="envelope.png" alt="Envelope" width="150">
+        <div id="letter">
+            <p>Will you be my Valentine?</p>
+            <button onclick="sayYes()">Yes</button>
+            <button onclick="sayNo()">No</button>
+            <p id="message"></p>
         </div>
+    </div>
 
-        <style>
-            div {
-                text-align: center;
-                vertical-align: middle;
-            }
-            #no {
-                position: absolute;
-            }  
-        </style>
-        <script>
-            document.getElementById("yesButton").addEventListener("click", function() {
-                alert("Omg mwah mwah mwaahh <3");
-            }); 
+    <script>
+        function openEnvelope() {
+            document.getElementById('letter').style.display = 'block';
+        }
 
-            var b = document.getElementById("no");
-            b.addEventListener("click", change);
-            
-            function change() {
-                var i = Math.floor(Math.random() * 1000);
-                var j = Math.floor(Math.random() * 700);
-                b.style.left = i + "px";
-                b.style.top = j + "px";
-            }    
-        </script>
-    </body>
+        function sayYes() {
+            document.getElementById('message').innerText = 'Yay! I knew you'd say yes! 😄 Happy Valentine\'s Day!';
+        }
+
+        function sayNo() {
+            document.getElementById('message').innerText = 'Oh no! 😢 Are you sure? Give it another thought!';
+        }
+    </script>
+
+</body>
 </html>
